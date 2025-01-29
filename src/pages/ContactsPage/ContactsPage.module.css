@@ -1,0 +1,47 @@
+.loader {
+  top: -60px;
+  left: 0;
+  position: absolute;
+}
+
+.pageWrapper {
+  padding-top: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: #6c83db;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.mainContentWrapper {
+  display: flex;
+  gap: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.leftSide {
+  min-width: 350px;
+}
+
+.rightSide {
+  max-width: 900px;
+  position: relative;
+}
+
+@media screen and (max-width: 815px) {
+  .mainContentWrapper {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+  .leftSide {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
