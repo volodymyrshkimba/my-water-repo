@@ -11,6 +11,7 @@ import Loader from "../../components/Loader/Loader";
 
 import css from "./ContactsPage.module.css";
 import { Toaster } from "react-hot-toast";
+import Calendar from "../../components/MonthStatsTable/MonthStatsTable";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const ContactsPage = () => {
           {!error ? <ContactList /> : <div>ERROR</div>}
         </div>
       </div>
+      <Calendar />
     </div>
   );
 };

@@ -12,6 +12,7 @@ import css from "./App.module.css";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { refreshUser } from "./redux/auth/operations";
+import SignupPage from "./pages/SingupPage/SignupPage";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -38,6 +39,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/signup" element={<SignupPage />} />
             <Route
               path="/register"
               element={
