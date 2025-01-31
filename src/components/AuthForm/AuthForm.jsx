@@ -1,22 +1,24 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
+import clsx from "clsx";
 
 import css from "./AuthForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import clsx from "clsx";
 import { useState } from "react";
 import EyeIcon from "../EyeIcon/EyeIcon";
+import { registerWater } from "../../redux/auth/operations";
 
 const AuthForm = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [isRepeatPasswordShown, setIsRepeatPasswordShown] = useState(false);
   const navigate = useNavigate();
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
     console.log({ email: values.email, password: values.password });
+    dispatch(registerWater({ email: values.email, password: values.password }));
     actions.resetForm();
     navigate("/");
   };

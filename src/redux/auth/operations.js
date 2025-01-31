@@ -58,3 +58,16 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const registerWater = createAsyncThunk(
+  "auth/registerWater",
+  async (user, thunkAPI) => {
+    try {
+      // const { data } = await axios.post("/users/signup", user);
+      // setAuthHeader(data.token);
+      return user;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
